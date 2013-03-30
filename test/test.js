@@ -2,8 +2,13 @@ var isAsync = require('../lib/is-async');
 var cr = require('complexity-report');
 var fs = require('fs');
 
-exports.guesswork = function(test) {
+function bootstrap(test) {
     test.expect = test.expect || test.plan;
+    test.done = test.done || test.end;
+}
+
+exports.guesswork = function(test) {
+    bootstrap(test);
     test.expect(3);
     function foo() {
         return 1;
@@ -18,7 +23,7 @@ exports.guesswork = function(test) {
 };
 
 exports.forced = function(test) {
-    test.expect = test.expect || test.plan;
+    bootstrap(test);
     test.expect(2);
     function forceAsync() {}
     forceAsync.async = true;
@@ -30,7 +35,7 @@ exports.forced = function(test) {
 };
 
 exports.complexity = function(test) {
-    test.expect = test.expect || test.plan;
+    bootstrap(test);
     test.expect(1);
     test.ok(70 <= cr.run(fs.readFileSync('./lib/is-async.js', 'utf8')).maintainability, 'is-async is not considered overly complex');
     test.done();
