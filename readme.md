@@ -1,4 +1,6 @@
-# is-async
+# is-async [![Build Status](https://travis-ci.org/dfellis/is-async.png)](https://travis-ci.org/dfellis/is-async)
+
+[![browser support](https://ci.testling.com/dfellis/is-async.png)](https://ci.testling.com/dfellis/is-async)
 
 A simple method to guess whether or not a given method is asynchronous.
 
