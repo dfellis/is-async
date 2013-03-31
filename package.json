@@ -4,7 +4,7 @@
 	"keywords": ["guess", "async"],
 	"homepage": "https://github.com/dfellis/is-async",
 	"author": "David Ellis",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"bugs": "https://github.com/dfellis/is-async/issues",
 	"repository": {
 		"type": "git",
